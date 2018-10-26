@@ -3,7 +3,7 @@
 	Plugin Name: Privacy WP Lite
 	Plugin URI: https://privacywp.com
 	Description: Make edits to the WordPress privacy notices.
-	Version: 1.0.0
+	Version: 1.0.1
 	License: GPLv3
 	License URI: https://www.gnu.org/licenses/gpl.html
 	Author: Scott DeLuzio
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( !defined( 'PRIVACY_WP_LITE_VERSION' ) ){
-	define( 'PRIVACY_WP_LITE_VERSION', '1.0.0' );
+	define( 'PRIVACY_WP_LITE_VERSION', '1.0.1' );
 }
 if ( !defined( 'PRIVACY_WP_LITE_PLUGIN_LICENSE_PAGE' ) ){
 	define( 'PRIVACY_WP_LITE_PLUGIN_LICENSE_PAGE', 'privacy-wp-license' );
@@ -27,6 +27,7 @@ include_once( 'includes/functions.php' );
 include_once( 'includes/general.php' );
 include_once( 'includes/confirmation-messages.php' );
 include_once( 'includes/export-email-to-user.php' );
+include_once( 'includes/third-party.php' );
 /**
  * These sections rely on user_confirmed_action_email_content filter.
  * Ticket #44314 references the duplicate use of this filter, which makes it impossible to

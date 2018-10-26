@@ -37,6 +37,9 @@ if ( !function_exists( 'privacy_wp_lite_admin_page_callback' ) ){
 			// 'erase-confirmed-email-to-user'		=> __( 'Erase Confirmation Email', 'privacy-wp-lite' ),
 			// 'user-confirmed-action-to-admin'	=> __( 'User Confirmed Action Email to Admin', 'privacy-wp-lite' )
 		);
+		if( !defined( 'PRIVACY_WP_VERSION' ) ){
+			$tabs['third-party'] = __( 'Export/Erase From 3rd Party Sites', 'privacy-wp-lite' );
+		}
 		$tabs = apply_filters( 'privacy_wp_lite_admin_tabs', $tabs );
 		?>
 		<h2 class="nav-tab-wrapper">
@@ -58,11 +61,13 @@ if ( !function_exists( 'privacy_wp_lite_admin_page_callback' ) ){
 						<?php wp_nonce_field( 'privacy-wp-lite-settings-page-nonce', 'privacy_wp_lite_settings_page_nonce' ); ?>
 					</td>
 				</tr>
+				<?php if( isset( $_GET['tab'] ) && 'third-party' != $_GET['tab'] ){ ?>
 				<tr>
 					<td colspan="2">
 						<input type="submit" value="Save" class="button button-primary button-large" />
 					</td>
 				</tr>
+				<?php } ?>
 			</table>
 		</form>
 
