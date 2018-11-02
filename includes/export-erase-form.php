@@ -2,6 +2,37 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+
+/**
+ * Request Form tab content
+ */
+add_action( 'privacy_wp_lite_admin_page_settings', 'privacy_wp_lite_request_form_tab' );
+function privacy_wp_lite_request_form_tab(){
+	if ( !isset( $_GET['tab'] ) ){
+		return;
+	}
+
+	if ( 'request-form' != $_GET['tab'] ){
+		return;
+	}
+
+	if ( !current_user_can( 'manage_options' ) ){
+
+		wp_die( 'Unauthorized User' );
+
+	}
+	?>
+	<tr>
+		<td colspan="2">
+			<h2><?php _e( 'Request Form Shortcode', 'privacy-wp-lite' ); ?></h2>
+			<p><?php _e( 'Want an easier way to handle your Export and Erase requests?', 'privacy-wp-lite' ); ?></p>
+			<p><?php _e( 'Use the following shortcode in your pages or posts to provide your site users a "self-serve" option for all of their data requests.', 'privacy-wp-lite' ); ?></p>
+			<p><code><?php _e( '[PrivacyRequestForm]', 'privacy-wp-lite' ); ?></code></p>
+			<p><?php _e( 'Users will be able to initiate an export or erase request on their own from the front end of your site. If they enter a valid email address or username, your site will send a confirmation email to them asking them to click to confirm the request just as if you initiated the request. As an administrator, you\'ll get an email once they\'ve confirmed their request so you can process it as necessary. If the user\'s email address or username is not valid no export or erase request will be initiated and the user will receive a notice on screen indicating why the request was not initiated.','privacy-wp-lite' ); ?></p>
+		</td>
+	</tr>
+	<?php
+}
 /**
  * Add the shortcode and register a Gutenberg block to display the form.
  */

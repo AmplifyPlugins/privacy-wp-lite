@@ -3,7 +3,7 @@
 	Plugin Name: Privacy WP Lite
 	Plugin URI: https://privacywp.com
 	Description: Make edits to the WordPress privacy notices.
-	Version: 1.0.1
+	Version: 1.1.0
 	License: GPLv3
 	License URI: https://www.gnu.org/licenses/gpl.html
 	Author: Scott DeLuzio
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( !defined( 'PRIVACY_WP_LITE_VERSION' ) ){
-	define( 'PRIVACY_WP_LITE_VERSION', '1.0.1' );
+	define( 'PRIVACY_WP_LITE_VERSION', '1.1.0' );
 }
 if( ! defined( 'PRIVACY_WP_LITE_PLUGIN_URL' ) ) {
 	define( 'PRIVACY_WP_LITE_PLUGIN_LICENSE_PAGE', 'privacy-wp-license' );		define( 'PRIVACY_WP_LITE_PLUGIN_URL', plugins_url( '', __FILE__ ) );

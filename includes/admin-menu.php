@@ -34,6 +34,7 @@ if ( !function_exists( 'privacy_wp_lite_admin_page_callback' ) ){
 			'general'							=> __( 'General', 'privacy-wp-lite' ),
 			'confirmation-messages'				=> __( 'Confirmation Messages', 'privacy-wp-lite' ),
 			'export-email-to-user'				=> __( 'Export Data Email to User', 'privacy-wp-lite' ),
+			'request-form'						=> __( 'Request Form', 'privacy-wp-lite' ),
 			// 'erase-confirmed-email-to-user'		=> __( 'Erase Confirmation Email', 'privacy-wp-lite' ),
 			// 'user-confirmed-action-to-admin'	=> __( 'User Confirmed Action Email to Admin', 'privacy-wp-lite' )
 		);
@@ -67,7 +68,7 @@ if ( !function_exists( 'privacy_wp_lite_admin_page_callback' ) ){
 				 * After clicking on any other tab, and even the default "General" tab, $_GET['tab'] will be set.
 				 * We don't want to show the save button on the third party tab.
 				 */
-				if( !isset( $_GET['tab'] ) || ( isset( $_GET['tab'] ) && 'third-party' != $_GET['tab'] ) ){ ?>
+				if( !isset( $_GET['tab'] ) || ( isset( $_GET['tab'] ) && !in_array( $_GET['tab'], array( 'third-party', 'request-form' ) ) ) ){ ?>
 				<tr>
 					<td colspan="2">
 						<input type="submit" value="Save" class="button button-primary button-large" />
