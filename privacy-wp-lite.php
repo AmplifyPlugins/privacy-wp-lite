@@ -17,17 +17,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( !defined( 'PRIVACY_WP_LITE_VERSION' ) ){
 	define( 'PRIVACY_WP_LITE_VERSION', '1.0.1' );
 }
-if ( !defined( 'PRIVACY_WP_LITE_PLUGIN_LICENSE_PAGE' ) ){
-	define( 'PRIVACY_WP_LITE_PLUGIN_LICENSE_PAGE', 'privacy-wp-license' );
+if( ! defined( 'PRIVACY_WP_LITE_PLUGIN_URL' ) ) {
+	define( 'PRIVACY_WP_LITE_PLUGIN_LICENSE_PAGE', 'privacy-wp-license' );		define( 'PRIVACY_WP_LITE_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 }
-
-include_once( 'includes/admin-menu.php' );
-include_once( 'includes/filters.php' );
-include_once( 'includes/functions.php' );
-include_once( 'includes/general.php' );
-include_once( 'includes/confirmation-messages.php' );
-include_once( 'includes/export-email-to-user.php' );
-include_once( 'includes/third-party.php' );
+if( ! defined( 'PRIVACY_WP_LITE_PLUGIN_DIR' ) ) {
+	define( 'PRIVACY_WP_LITE_PLUGIN_DIR', dirname( __FILE__ ) );
+}
+include_once( PRIVACY_WP_LITE_PLUGIN_DIR . '/includes/admin-menu.php' );
+include_once( PRIVACY_WP_LITE_PLUGIN_DIR . '/includes/filters.php' );
+include_once( PRIVACY_WP_LITE_PLUGIN_DIR . '/includes/functions.php' );
+include_once( PRIVACY_WP_LITE_PLUGIN_DIR . '/includes/general.php' );
+include_once( PRIVACY_WP_LITE_PLUGIN_DIR . '/includes/confirmation-messages.php' );
+include_once( PRIVACY_WP_LITE_PLUGIN_DIR . '/includes/export-email-to-user.php' );
+include_once( PRIVACY_WP_LITE_PLUGIN_DIR . '/includes/third-party.php' );
+include_once( PRIVACY_WP_LITE_PLUGIN_DIR . '/includes/export-erase-form.php' );
+include_once( PRIVACY_WP_LITE_PLUGIN_DIR . '/includes/scripts.php' );
 /**
  * These sections rely on user_confirmed_action_email_content filter.
  * Ticket #44314 references the duplicate use of this filter, which makes it impossible to

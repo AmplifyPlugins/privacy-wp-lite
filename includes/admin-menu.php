@@ -61,7 +61,13 @@ if ( !function_exists( 'privacy_wp_lite_admin_page_callback' ) ){
 						<?php wp_nonce_field( 'privacy-wp-lite-settings-page-nonce', 'privacy_wp_lite_settings_page_nonce' ); ?>
 					</td>
 				</tr>
-				<?php if( isset( $_GET['tab'] ) && 'third-party' != $_GET['tab'] ){ ?>
+				<?php
+				/**
+				 * When clicking on the Privacy WP Lite menu for the first time, $_GET['tab'] is not set.
+				 * After clicking on any other tab, and even the default "General" tab, $_GET['tab'] will be set.
+				 * We don't want to show the save button on the third party tab.
+				 */
+				if( !isset( $_GET['tab'] ) || ( isset( $_GET['tab'] ) && 'third-party' != $_GET['tab'] ) ){ ?>
 				<tr>
 					<td colspan="2">
 						<input type="submit" value="Save" class="button button-primary button-large" />
