@@ -37,6 +37,14 @@ While the export/erase tools built-in to WordPress are great for the data that i
 
 Think of it as a "bridge" that connects your website to the other sites where your user's data is stored.
 
+== Screenshots ==
+
+1. Change the number of days before the export file expires. WordPress default expiration length is 3 days.
+2. Edit the confirmation notices shown to users on your site who request that their data is exported or erased.
+3. Edit the email sent to users who are requesting an export of their data.
+4. Use the `[PrivacyRequestForm]` shortcode to display a self-service form on your website for visitors to initiate an export or erase request. The form initiates the request, it doesn't allow data to be exported or erased without an administrator verifying the request. This form does the same thing as what an administrator would do when entering a user's email address on the export/erase admin page.
+
+
 == Changelog ==
 = 1.1.0 =
 * Include front end self-service form for export and erase requests.
