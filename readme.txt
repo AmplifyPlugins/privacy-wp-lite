@@ -1,7 +1,7 @@
 === Privacy WP Lite for GDPR ===
 Contributors: scott.deluzio
 Tags: privacy, gdpr, user data
-Tested up to: 5.1.1
+Tested up to: 5.2.0
 Stable tag: 1.1.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.html
